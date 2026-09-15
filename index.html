@@ -925,7 +925,7 @@
   const root = document.documentElement;
   let saved = null;
   try { saved = localStorage.getItem('theme'); } catch (e) {}
-  if (saved === 'dark') root.setAttribute('data-theme', 'dark');
+  if (saved === 'dark' || saved === null) root.setAttribute('data-theme', 'dark');
   themeBtn.addEventListener('click', () => {
     const dark = root.getAttribute('data-theme') === 'dark';
     if (dark) { root.removeAttribute('data-theme'); }
